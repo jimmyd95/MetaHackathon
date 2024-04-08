@@ -1,0 +1,65 @@
+{
+  "constellations": [
+    {
+      "name": "Cassiopeia",
+      "stars": [
+        { "name": "Alpha", "ra": 10.125, "dec": 56.533 },
+        { "name": "Beta", "ra": 2.225, "dec": 59.15 },
+        { "name": "Gamma", "ra": 14.1, "dec": 60.717 },
+        { "name": "Delta", "ra": 21.525, "dec": 60.233 },
+        { "name": "Epsilon", "ra": 28.596, "dec": 63.667 }
+      ],
+      "connections": [
+        { "start": "Alpha", "end": "Beta" },
+        { "start": "Alpha", "end": "Gamma" },
+        { "start": "Gamma", "end": "Delta" },
+        { "start": "Delta", "end": "Epsilon" }
+      ]
+    },
+    {
+      "name": "Ursa Major",
+      "stars": [
+        { "name": "Alkaid", "ra": 207.133, "dec": 49.19 },
+        { "name": "Mizar", "ra": 201.236, "dec": 54.797 },
+        { "name": "Alioth", "ra": 193.785, "dec": 55.828 },
+        { "name": "Megrez", "ra": 184.166, "dec": 56.898 },
+        { "name": "Dubhe", "ra": 166.313, "dec": 61.622 },
+        { "name": "23 Ursae Majoris", "ra": 143.363, "dec": 62.959 },
+        { "name": "Muscida", "ra": 128.07, "dec": 60.64 },
+        { "name": "Upsilon Ursae Majoris", "ra": 148.182, "dec": 58.927 },
+        { "name": "Phi Ursae Majoris", "ra": 148.442, "dec": 53.954 },
+        { "name": "Theta Ursae Majoris", "ra": 143.622, "dec": 51.569 },
+        { "name": "Kappa Ursae Majoris", "ra": 136.321, "dec": 47.063 },
+        { "name": "Iota Ursae Majoris A", "ra": 135.219, "dec": 47.949 },
+        { "name": "Merak", "ra": 165.833, "dec": 56.254 },
+        { "name": "Phecda", "ra": 178.785, "dec": 53.56 },
+        { "name": "Chi Ursae Majoris", "ra": 176.839, "dec": 47.645 },
+        { "name": "Psi Ursae Majoris", "ra": 167.762, "dec": 44.368 },
+        { "name": "Tania Australis", "ra": 155.948, "dec": 41.379 },
+        { "name": "Tania Borealis", "ra": 154.643, "dec": 42.795 }
+      ],
+      "connections": [
+        { "start": "Alkaid", "end": "Mizar" },
+        { "start": "Mizar", "end": "Alioth" },
+        { "start": "Alioth", "end": "Megrez" },
+        { "start": "Megrez", "end": "Dubhe" },
+        { "start": "Megrez", "end": "Phecda" },
+        { "start": "Dubhe", "end": "23 Ursae Majoris" },
+        { "start": "23 Ursae Majoris", "end": "Muscida" },
+        { "start": "Muscida", "end": "Upsilon Ursae Majoris" },
+        { "start": "Upsilon Ursae Majoris", "end": "Phi Ursae Majoris" },
+        { "start": "Phi Ursae Majoris", "end": "Theta Ursae Majoris" },
+        { "start": "Theta Ursae Majoris", "end": "Kappa Ursae Majoris" },
+        { "start": "Theta Ursae Majoris", "end": "Iota Ursae Majoris A" },
+        { "start": "Phi Ursae Majoris", "end": "Merak" },
+        { "start": "Dubhe", "end": "Merak" },
+        { "start": "Merak", "end": "Phecda" },
+
+        { "start": "Phecda", "end": "Chi Ursae Majoris" },
+        { "start": "Chi Ursae Majoris", "end": "Psi Ursae Majoris" },
+        { "start": "Psi Ursae Majoris", "end": "Tania Australis" },
+        { "start": "Psi Ursae Majoris", "end": "Tania Borealis" }
+      ]
+    }
+  ]
+}

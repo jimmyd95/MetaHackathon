@@ -13,8 +13,8 @@ using UnityEngine;
     public class StarData
     {
         public string name;
-        public float ra;
-        public float dec;
+        public float ra; // right ascension
+        public float dec; // declination
     }
 
     [System.Serializable]
@@ -34,7 +34,7 @@ using UnityEngine;
 
 public class ConstellationLoader : MonoBehaviour
 {
-    private string filePath = "Data/ConstellationData";
+    private string filePath = "Assets/_CITS/09_Data/ConstellationData.json";
     private TextAsset jsonFile;
 
     private float range = 5f; // The range around the origin for the parent object
@@ -106,8 +106,5 @@ public class ConstellationLoader : MonoBehaviour
             }
         }
     }
-    void Update()
-    {
-        
-    }
+
 }

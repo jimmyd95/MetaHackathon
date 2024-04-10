@@ -34,8 +34,9 @@ using UnityEngine;
 
 public class ConstellationLoader : MonoBehaviour
 {
-    private string filePath = "Assets/_CITS/09_Data/ConstellationData.json";
+    private string constellation_dataPath = "_CITS/09_Data/ConstellationData.json";
     private TextAsset jsonFile;
+    private string jsonText;
 
     private float range = 5f; // The range around the origin for the parent object
 
@@ -49,19 +50,22 @@ public class ConstellationLoader : MonoBehaviour
     private void LoadJSON()
     {
         Debug.Log("Loading JSON...");
-        jsonFile = Resources.Load<TextAsset>(filePath);
-        if (jsonFile == null)
-        {
+        string filePath = Path.Combine(Application.dataPath, constellation_dataPath);
+
+        if(File.Exists(filePath)){
+            jsonText = File.ReadAllText(filePath);
+        }
+        else{
             Debug.LogError("Failed to load JSON file.");
         }
     }
 
     private void ParseJSON()
     {
-        if (jsonFile != null)
+        if (jsonText != null)
         {
             Debug.Log("Parsing JSON...");
-            ConstellationDataArray constellationDataArray = JsonUtility.FromJson<ConstellationDataArray>(jsonFile.text);
+            ConstellationDataArray constellationDataArray = JsonUtility.FromJson<ConstellationDataArray>(jsonText);
 
             foreach (ConstellationData constellation in constellationDataArray.constellations)
             {

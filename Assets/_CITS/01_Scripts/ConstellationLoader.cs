@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using System.Collections.Generic;
 
     [System.Serializable]
     public class ConstellationDataArray
@@ -34,11 +33,10 @@ using UnityEngine;
 
 public class ConstellationLoader : MonoBehaviour
 {
+    [SerializeField] private GameObject _bolt;
     private string constellation_dataPath = "_CITS/09_Data/ConstellationData.json";
     private TextAsset jsonFile;
     private string jsonText;
-
-    [SerializeField] private bool helloWorld;
 
 
     private float range = 5f; // The range around the origin for the parent object

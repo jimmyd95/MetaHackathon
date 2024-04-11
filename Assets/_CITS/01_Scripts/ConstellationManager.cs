@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,15 +5,16 @@ public class ConstellationManager : MonoBehaviour
 {
     public List<string[]> celestialConnections = new List<string[]>();
     public Dictionary<string, Vector2> celestialCoordinates = new Dictionary<string, Vector2>();
-
-    [SerializeField] private bool helloWorld;
-
     public Dictionary<string, GameObject> celestialStars = new Dictionary<string, GameObject>();
     public float scaleFactor = 5f; // Scaling factor for spreading out the stars
+    private GameObject _bolt;
 
     // Start is called before the first frame update
     void Start()
     {
+        _bolt = GameObject.FindWithTag("Bolt");
+        // Debug.Log("Bolt found: " + _bolt);
+
         Debug.Log("Inside Constellation Manager...");
         foreach((string starName, Vector2 coordinates) in celestialCoordinates){
             GameObject star = CreateStar(starName, coordinates);
@@ -28,6 +28,7 @@ public class ConstellationManager : MonoBehaviour
             Transform starB = celestialStars[connection[1]].transform;
             ConnectStars(starA, starB);
         }
+
     }
 
     // Update is called once per frame
@@ -43,7 +44,7 @@ public class ConstellationManager : MonoBehaviour
         Vector3 cartesianCoord = CelestialToCartesian(celestialCoord.x, celestialCoord.y);
 
         // Instantiate star GameObject
-        GameObject star = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        GameObject star = Instantiate(_bolt);
         star.transform.parent = transform; // Set parent to "Constellation"
         star.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f); // Adjust scale if necessary
         DynamicFloat floatValue = star.AddComponent<DynamicFloat>();

@@ -7,6 +7,8 @@ public class ConstellationManager : MonoBehaviour
     public List<string[]> celestialConnections = new List<string[]>();
     public Dictionary<string, Vector2> celestialCoordinates = new Dictionary<string, Vector2>();
 
+    [SerializeField] private bool helloWorld;
+
     public Dictionary<string, GameObject> celestialStars = new Dictionary<string, GameObject>();
     public float scaleFactor = 5f; // Scaling factor for spreading out the stars
 
@@ -44,7 +46,7 @@ public class ConstellationManager : MonoBehaviour
         GameObject star = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         star.transform.parent = transform; // Set parent to "Constellation"
         star.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f); // Adjust scale if necessary
-        Float floatValue = star.AddComponent<Float>();
+        DynamicFloat floatValue = star.AddComponent<DynamicFloat>();
         floatValue.floatHeight = 0.1f;
         floatValue.floatSpeed = 1f;
         star.name = name;
@@ -83,6 +85,7 @@ public class ConstellationManager : MonoBehaviour
         lineRenderer.startWidth = 0.02f;
         lineRenderer.endWidth = 0.02f;
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        //
 
         // Set positions for the Line Renderer
         lineRenderer.positionCount = 2;

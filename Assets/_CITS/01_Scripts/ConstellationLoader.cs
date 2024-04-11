@@ -38,6 +38,9 @@ public class ConstellationLoader : MonoBehaviour
     private TextAsset jsonFile;
     private string jsonText;
 
+    [SerializeField] private bool helloWorld;
+
+
     private float range = 5f; // The range around the origin for the parent object
 
 
@@ -92,11 +95,11 @@ public class ConstellationLoader : MonoBehaviour
                 GameObject parentObject = new GameObject(constellation.name);
                 parentObject.transform.parent = transform;
                 // Generate random values for x, y, and z coordinates within the range
-                float randomX = Random.Range(-range, range);
-                float randomY = Random.Range(0, range);
-                float randomZ = Random.Range(-range, range);
+                // float randomX = Random.Range(-range, range);
+                // float randomY = Random.Range(0, range);
+                // float randomZ = Random.Range(-range, range);
                 // Set the position of the parent constellation GameObject
-                parentObject.transform.position = new Vector3(randomX, randomY, randomZ);
+                parentObject.transform.position = new Vector3(0, 0, 0);
                 Debug.Log(constellation.name+"'s position in loader: "+parentObject.transform.position.x +", "+parentObject.transform.position.y+", "+parentObject.transform.position.z);
                 
 

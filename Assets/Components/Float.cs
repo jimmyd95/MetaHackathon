@@ -29,9 +29,6 @@ public class Float : MonoBehaviour
     // }
 
 
-
-    
-
     void Start()
     {
         originalPosition = transform.position;

@@ -11315,6 +11315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatHeight: 1
   floatSpeed: 1
+
 --- !u!135 &2111717852
 SphereCollider:
   m_ObjectHideFlags: 0

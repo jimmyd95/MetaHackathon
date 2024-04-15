@@ -9,6 +9,8 @@ public class ConstellationManager : MonoBehaviour
     public float scaleFactor = 5f; // Scaling factor for spreading out the stars
     private GameObject _bolt;
 
+    [SerializeField] private int interactiveThreshold = 10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,18 +18,24 @@ public class ConstellationManager : MonoBehaviour
         // Debug.Log("Bolt found: " + _bolt);
 
         Debug.Log("Inside Constellation Manager...");
+
+        // check for the threshold
+        interactiveThreshold = (celestialCoordinates.Count < interactiveThreshold) ? celestialCoordinates.Count: interactiveThreshold; 
+        int interactiveThresholdCounter = 0;
         foreach((string starName, Vector2 coordinates) in celestialCoordinates){
-            GameObject star = CreateStar(starName, coordinates);
+            bool interactiveStar = (interactiveThresholdCounter++ < interactiveThreshold);
+            Debug.Log("Bool: "+interactiveStar);
+            GameObject star = CreateStar(starName, coordinates, interactiveStar);
             celestialStars.Add(starName, star);
         }
 
         Debug.Log("Total Connections :"+ celestialConnections.Count);
-        foreach(string[] connection in celestialConnections) {
-            Debug.Log(connection[0] + " connects to "+ connection[1]);
-            Transform starA = celestialStars[connection[0]].transform;
-            Transform starB = celestialStars[connection[1]].transform;
-            ConnectStars(starA, starB);
-        }
+        // foreach(string[] connection in celestialConnections) {
+        //     Debug.Log(connection[0] + " connects to "+ connection[1]);
+        //     Transform starA = celestialStars[connection[0]].transform;
+        //     Transform starB = celestialStars[connection[1]].transform;
+        //     ConnectStars(starA, starB);
+        // }
 
     }
 
@@ -38,7 +46,7 @@ public class ConstellationManager : MonoBehaviour
     }
 
         // Create a star GameObject at the given celestial coordinates
-    GameObject CreateStar(string name, Vector2 celestialCoord)
+    GameObject CreateStar(string name, Vector2 celestialCoord, bool interactive)
     {
         // Convert celestial coordinates to Cartesian coordinates
         Vector3 cartesianCoord = CelestialToCartesian(celestialCoord.x, celestialCoord.y);
@@ -47,13 +55,28 @@ public class ConstellationManager : MonoBehaviour
         GameObject star = Instantiate(_bolt);
         star.transform.parent = transform; // Set parent to "Constellation"
         star.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f); // Adjust scale if necessary
-        DynamicFloat floatValue = star.AddComponent<DynamicFloat>();
-        floatValue.floatHeight = 0.1f;
-        floatValue.floatSpeed = 1f;
-        star.name = name;
+        // add floating component
+        // DynamicFloat floatValue = star.AddComponent<DynamicFloat>();
+        // floatValue.starCoordinate = cartesianCoord; // store star Coordinate
+        // floatValue.floatHeight = 0.1f;
+        // floatValue.floatSpeed = 1f;
+        // star.name = name;
         // star.transform.position = cartesianCoord;
         Debug.Log("Parent position in manager: "+transform.position.x +", "+transform.position.y+", "+transform.position.z);
-        star.transform.position = transform.position + cartesianCoord;
+        Vector3 randomPosition = new Vector3(Random.Range((cartesianCoord.x-5), cartesianCoord.x), Random.Range(0, cartesianCoord.y), Random.Range((cartesianCoord.z-5), cartesianCoord.z));
+
+
+        // add a component to update position
+        if(interactive){
+            // position will be random
+            // star.transform.position = transform.position + cartesianCoord;
+            star.transform.position = randomPosition;
+            Debug.Log("Star "+name+" is interactive");
+            // star.AddComponent<InteractionUpdates>();
+        }
+        else{
+            star.transform.position = transform.position + cartesianCoord;
+        }
         return star;
     }
 

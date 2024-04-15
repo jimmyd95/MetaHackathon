@@ -33,7 +33,6 @@ using System.Collections.Generic;
 
 public class ConstellationLoader : MonoBehaviour
 {
-    [SerializeField] private GameObject _bolt;
     private string constellation_dataPath = "_CITS/09_Data/ConstellationData.json";
     private TextAsset jsonFile;
     private string jsonText;

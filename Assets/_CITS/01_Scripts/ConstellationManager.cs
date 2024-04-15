@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Meta.XR.MRUtilityKit;
 using UnityEngine;
 
 public class ConstellationManager : MonoBehaviour
@@ -30,6 +31,7 @@ public class ConstellationManager : MonoBehaviour
         }
 
         Debug.Log("Total Connections :"+ celestialConnections.Count);
+        // Debug.Log("Total Connections :"+ celestialConnections.Count);
         // foreach(string[] connection in celestialConnections) {
         //     Debug.Log(connection[0] + " connects to "+ connection[1]);
         //     Transform starA = celestialStars[connection[0]].transform;
@@ -46,13 +48,20 @@ public class ConstellationManager : MonoBehaviour
     }
 
         // Create a star GameObject at the given celestial coordinates
+    // Make sure your Quest is connected and runnable BEFORE YOU WORK ON THIS
+    // Read through FindSpawnPositions.cs
+    // var prefabBounds = Utilities.GetPrefabBounds(_bolt);
+    // generate a random location within the room, use the spawn, and instantiate within the room
+    // GameObject star = Instantiate(_bolt, new Vector3(1, 1, 1), quaternion.identity);
+
+    // Create a star GameObject at the given celestial coordinates
     GameObject CreateStar(string name, Vector2 celestialCoord, bool interactive)
     {
         // Convert celestial coordinates to Cartesian coordinates
-        Vector3 cartesianCoord = CelestialToCartesian(celestialCoord.x, celestialCoord.y);
+        Vector3 cartesianCoord = CelestialToCartesian(celestialCoord.x, celestialCoord.y); // can be utilized after the bolts turned into stars and constellation
 
         // Instantiate star GameObject
-        GameObject star = Instantiate(_bolt);
+        GameObject star = Instantiate(_bolt); // need to adjust so it can spawn the location where we want it to be
         star.transform.parent = transform; // Set parent to "Constellation"
         star.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f); // Adjust scale if necessary
         // add floating component

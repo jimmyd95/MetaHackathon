@@ -6859,6 +6859,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1188612283}
+  - component: {fileID: 1188612284}
   - component: {fileID: 1188612282}
   - component: {fileID: 1188612281}
   m_Layer: 0
@@ -6928,13 +6929,19 @@ VisualEffect:
       m_Array: []
     m_Vector2f:
       m_Array:
-      - m_Value: {x: 6, y: 0}
+      - m_Value: {x: 100, y: 0}
         m_Name: Time
         m_Overridden: 0
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 1.9895288, y: 1.0471203, z: 1.9895288, w: 1}
+        m_Name: OrbColour
+        m_Overridden: 1
+      - m_Value: {x: 1.1703112, y: 0.54901963, z: 1.0163229, w: 1}
+        m_Name: LightningColour
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -6964,6 +6971,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1188612284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188612280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4996f17b5a4e31f46b7640568b30a874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vfx: {fileID: 1188612282}
+  _lightningColor: {r: 0.9568628, g: 0.7058824, b: 0.94117653, a: 0.7058824}
+  _orbColor: {r: 1, g: 0.5882353, b: 1, a: 1}
+  _particleVelocity: {x: 0, y: 0.05, z: 0}
+  _time: {x: 0, y: 0}
 --- !u!1 &1206547820
 GameObject:
   m_ObjectHideFlags: 0
@@ -9646,21 +9670,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4724372989759278403, guid: ad97f2d78e891db4ab58f2c0481f50ee,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724372989759278403, guid: ad97f2d78e891db4ab58f2c0481f50ee,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724372989759278403, guid: ad97f2d78e891db4ab58f2c0481f50ee,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4724372989759278403, guid: ad97f2d78e891db4ab58f2c0481f50ee,
         type: 3}
       propertyPath: m_LocalPosition.x

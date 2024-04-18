@@ -41,7 +41,11 @@ RenderSettings:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+>>>>>>> parent of 4cf449c (Introduced two models)
 =======
   m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
 >>>>>>> parent of 4cf449c (Introduced two models)
@@ -11528,6 +11532,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &872075795
 GameObject:
   m_ObjectHideFlags: 0
@@ -11559,6 +11564,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1980569171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 4cf449c (Introduced two models)
 =======
 >>>>>>> parent of 4cf449c (Introduced two models)
 =======
@@ -27165,10 +27172,13 @@ SceneRoots:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 39494333}
   - {fileID: 78579374}
   - {fileID: 1649209725}
   - {fileID: 164628042}
+=======
+>>>>>>> parent of 4cf449c (Introduced two models)
 =======
 >>>>>>> parent of 4cf449c (Introduced two models)
 =======

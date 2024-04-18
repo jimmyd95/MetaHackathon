@@ -15,7 +15,11 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   targetDeviceTypes: 010000000200000003000000
+=======
+  targetDeviceTypes: 01000000020000000300000004000000
+>>>>>>> parent of 4cf449c (Introduced two models)
 =======
   targetDeviceTypes: 01000000020000000300000004000000
 >>>>>>> parent of 4cf449c (Introduced two models)
@@ -44,8 +48,12 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   skipUnneededShaders: 0
   enableIL2CPPLTO: 0
+=======
+  skipUnneededShaders: 1
+>>>>>>> parent of 4cf449c (Introduced two models)
 =======
   skipUnneededShaders: 1
 >>>>>>> parent of 4cf449c (Introduced two models)

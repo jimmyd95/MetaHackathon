@@ -30,6 +30,7 @@ public class ConstellationManager : MonoBehaviour
             celestialStars.Add(starName, star);
         }
 
+        Debug.Log("Total Connections :"+ celestialConnections.Count);
         // Debug.Log("Total Connections :"+ celestialConnections.Count);
         // foreach(string[] connection in celestialConnections) {
         //     Debug.Log(connection[0] + " connects to "+ connection[1]);
@@ -37,8 +38,8 @@ public class ConstellationManager : MonoBehaviour
         //     Transform starB = celestialStars[connection[1]].transform;
         //     ConnectStars(starA, starB);
         // }
-    }
 
+    }
 
     // Update is called once per frame
     void Update()
@@ -46,6 +47,7 @@ public class ConstellationManager : MonoBehaviour
         
     }
 
+        // Create a star GameObject at the given celestial coordinates
     // Make sure your Quest is connected and runnable BEFORE YOU WORK ON THIS
     // Read through FindSpawnPositions.cs
     // var prefabBounds = Utilities.GetPrefabBounds(_bolt);

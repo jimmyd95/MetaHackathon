@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+>>>>>>> parent of 4cf449c (Introduced two models)
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11513,6 +11517,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+<<<<<<< HEAD
 --- !u!1 &872075795
 GameObject:
   m_ObjectHideFlags: 0
@@ -11544,6 +11549,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1980569171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 4cf449c (Introduced two models)
 --- !u!1 &878015561
 GameObject:
   m_ObjectHideFlags: 0
@@ -27141,7 +27148,10 @@ SceneRoots:
   - {fileID: 254480545}
   - {fileID: 780574423}
   - {fileID: 1772194318}
+<<<<<<< HEAD
   - {fileID: 39494333}
   - {fileID: 78579374}
   - {fileID: 1649209725}
   - {fileID: 164628042}
+=======
+>>>>>>> parent of 4cf449c (Introduced two models)
